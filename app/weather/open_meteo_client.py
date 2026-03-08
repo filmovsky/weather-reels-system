@@ -1,8 +1,13 @@
 import requests
 from typing import Dict, Any
+import os
 
 class OpenMeteoClient:
     BASE_URL = "https://api.open-meteo.com/v1/forecast"
+    OUTPUT_DIR = "scripts"  # folder na skrypty tekstowe dla lektora
+
+    def __init__(self):
+        os.makedirs(self.OUTPUT_DIR, exist_ok=True)
 
     def get_current_weather(self, region: str = "Warszawa") -> Dict[str, Any]:
         region_coords = {
@@ -93,7 +98,15 @@ class OpenMeteoClient:
 
         outro = "Stay tuned for updates – follow for daily forecasts!"
 
-        return f"[Hook] {hook}\n[Overview] {overview}\n[Outro] {outro}"
+        full_script = f"[Hook] {hook}\n[Overview] {overview}\n[Outro] {outro}"
+        return full_script
+
+    def save_script_to_file(self, script: str, region: str):
+        """Zapisuje skrypt do pliku txt – gotowy dla lektora (XTTS-v2)"""
+        filename = f"{self.OUTPUT_DIR}/{region.lower().replace(' ', '_')}_script.txt"
+        with open(filename, "w", encoding="utf-8") as f:
+            f.write(script)
+        print(f"Skrypt zapisany: {filename}")
 
 
 # Do testów
@@ -103,3 +116,4 @@ if __name__ == "__main__":
         weather = client.get_current_weather(city)
         script = client.generate_script(weather)
         print(f"\n=== {city} ===\n{weather}\nTyp rolki: {client.analyze_weather(weather)}\nSkrypt rolki:\n{script}")
+        client.save_script_to_file(script, city)
