@@ -1,0 +1,135 @@
+system:
+
+  project_name: weather-reels-system
+
+  environment: production
+
+  timezone_default: UTC
+
+  log_level: INFO
+
+
+
+video:
+
+  width: 1080
+
+  height: 1920
+
+  fps: 30
+
+  format: mp4
+
+  codec: h264
+
+  audio_codec: aac
+
+  duration_min_seconds: 20
+
+  duration_max_seconds: 30
+
+
+
+render:
+
+  engine: ffmpeg
+
+  hardware_acceleration: true
+
+  gpu: nvidia
+
+  max_parallel_renders: 6
+
+
+
+tts:
+
+  provider: elevenlabs
+
+  language_default: en
+
+  audio_format: mp3
+
+  normalize_audio: true
+
+  remove_silence: true
+
+
+
+weather:
+
+  primary_provider: open_meteo
+
+  cache_minutes: 30
+
+  retry_attempts: 2
+
+
+
+pipeline:
+
+  enable_weather_stage: true
+
+  enable_analysis_stage: true
+
+  enable_script_stage: true
+
+  enable_tts_stage: true
+
+  enable_render_stage: true
+
+  enable_publish_stage: true
+
+
+
+publish:
+
+  platforms:
+
+    - youtube
+
+    - tiktok
+
+    - instagram
+
+    - facebook
+
+  retry_attempts: 3
+
+
+
+workers:
+
+  weather_workers: 6
+
+  script_workers: 8
+
+  tts_workers: 8
+
+  render_workers: 6
+
+  publish_workers: 4
+
+
+
+regions:
+
+  default_forecast_times:
+
+    - "06:00"
+
+    - "18:00"
+
+
+
+storage:
+
+  base_path: storage
+
+  scripts_path: storage/scripts
+
+  audio_path: storage/audio
+
+  renders_path: storage/renders
+
+  logs_path: storage/logs

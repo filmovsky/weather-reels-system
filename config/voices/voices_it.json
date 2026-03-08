@@ -1,0 +1,44 @@
+{
+  "voices": [
+    {
+      "id": "it_voice_01",
+      "provider": "elevenlabs",
+      "voice_id": "",
+      "language": "it",
+      "gender": "female",
+      "style": "news",
+      "energy": "medium",
+      "active": true
+    },
+    {
+      "id": "it_voice_02",
+      "provider": "elevenlabs",
+      "voice_id": "",
+      "language": "it",
+      "gender": "male",
+      "style": "news",
+      "energy": "medium",
+      "active": true
+    },
+    {
+      "id": "it_voice_03",
+      "provider": "elevenlabs",
+      "voice_id": "",
+      "language": "it",
+      "gender": "female",
+      "style": "dynamic",
+      "energy": "high",
+      "active": true
+    },
+    {
+      "id": "it_voice_04",
+      "provider": "elevenlabs",
+      "voice_id": "",
+      "language": "it",
+      "gender": "male",
+      "style": "calm",
+      "energy": "low",
+      "active": true
+    }
+  ]
+}

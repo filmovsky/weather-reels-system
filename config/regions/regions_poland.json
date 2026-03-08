@@ -1,0 +1,18 @@
+{
+  "warszawa": {"lat": 52.2297, "lon": 21.0122, "country": "pl", "type": "city"},
+  "krakow": {"lat": 50.0647, "lon": 19.9450, "country": "pl", "type": "city"},
+  "lodz": {"lat": 51.7592, "lon": 19.4550, "country": "pl", "type": "city"},
+  "wroclaw": {"lat": 51.1079, "lon": 17.0385, "country": "pl", "type": "city"},
+  "poznan": {"lat": 52.4064, "lon": 16.9252, "country": "pl", "type": "city"},
+  "gdansk": {"lat": 54.3520, "lon": 18.6466, "country": "pl", "type": "city"},
+  "szczecin": {"lat": 53.4285, "lon": 14.5528, "country": "pl", "type": "city"},
+  "bydgoszcz": {"lat": 53.1235, "lon": 18.0084, "country": "pl", "type": "city"},
+  "lublin": {"lat": 51.2465, "lon": 22.5684, "country": "pl", "type": "city"},
+  "bialystok": {"lat": 53.1325, "lon": 23.1688, "country": "pl", "type": "city"},
+  "katowice": {"lat": 50.2649, "lon": 19.0238, "country": "pl", "type": "city"},
+  "czestochowa": {"lat": 50.8118, "lon": 19.1203, "country": "pl", "type": "city"},
+  "radom": {"lat": 51.4027, "lon": 21.1471, "country": "pl", "type": "city"},
+  "torun": {"lat": 53.0138, "lon": 18.5984, "country": "pl", "type": "city"},
+  "kielce": {"lat": 50.8661, "lon": 20.6286, "country": "pl", "type": "city"},
+  "rzeszow": {"lat": 50.0413, "lon": 21.9990, "country": "pl", "type": "city"}
+}

@@ -1,0 +1,64 @@
+{
+  "voices": [
+    {
+      "id": "en_voice_01",
+      "provider": "elevenlabs",
+      "voice_id": "EXAVITQu4vr4xnSDxMaL",
+      "language": "en",
+      "gender": "female",
+      "style": "neutral",
+      "energy": "medium",
+      "active": true
+    },
+    {
+      "id": "en_voice_02",
+      "provider": "elevenlabs",
+      "voice_id": "21m00Tcm4TlvDq8ikWAM",
+      "language": "en",
+      "gender": "male",
+      "style": "news",
+      "energy": "medium",
+      "active": true
+    },
+    {
+      "id": "en_voice_03",
+      "provider": "elevenlabs",
+      "voice_id": "AZnzlk1XvdvUeBnXmlld",
+      "language": "en",
+      "gender": "female",
+      "style": "dynamic",
+      "energy": "high",
+      "active": true
+    },
+    {
+      "id": "en_voice_04",
+      "provider": "elevenlabs",
+      "voice_id": "TxGEqnHWrfWFTfGW9XjX",
+      "language": "en",
+      "gender": "male",
+      "style": "calm",
+      "energy": "low",
+      "active": true
+    },
+    {
+      "id": "en_voice_05",
+      "provider": "elevenlabs",
+      "voice_id": "VR6AewLTigWG4xSOukaG",
+      "language": "en",
+      "gender": "female",
+      "style": "news",
+      "energy": "medium",
+      "active": true
+    },
+    {
+      "id": "en_voice_06",
+      "provider": "elevenlabs",
+      "voice_id": "pNInz6obpgDQGcFmaJgB",
+      "language": "en",
+      "gender": "male",
+      "style": "dynamic",
+      "energy": "high",
+      "active": true
+    }
+  ]
+}

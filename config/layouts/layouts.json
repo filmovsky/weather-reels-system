@@ -1,0 +1,19 @@
+{
+  "layouts": [
+    { "id": "layout_01_map_clean", "type": "map", "style": "clean", "priority": 1, "active": true },
+    { "id": "layout_02_news_dynamic", "type": "news", "style": "dynamic", "priority": 1, "active": true },
+    { "id": "layout_03_temp_focus", "type": "temperature", "style": "focus", "priority": 1, "active": true },
+    { "id": "layout_04_rain_alert", "type": "alert", "style": "rain", "priority": 1, "active": true },
+    { "id": "layout_05_wind_alert", "type": "alert", "style": "wind", "priority": 1, "active": true },
+    { "id": "layout_06_minimal_city", "type": "city", "style": "minimal", "priority": 1, "active": true },
+    { "id": "layout_07_forecast_cards", "type": "cards", "style": "forecast", "priority": 1, "active": true },
+    { "id": "layout_08_cloud_motion", "type": "clouds", "style": "motion", "priority": 1, "active": true },
+    { "id": "layout_09_pressure_drop", "type": "pressure", "style": "analysis", "priority": 1, "active": true },
+    { "id": "layout_10_evening_summary", "type": "summary", "style": "evening", "priority": 1, "active": true },
+    { "id": "layout_11_morning_update", "type": "summary", "style": "morning", "priority": 1, "active": true },
+    { "id": "layout_12_tourism", "type": "tourism", "style": "travel", "priority": 1, "active": true },
+    { "id": "layout_13_storm_breaking", "type": "storm", "style": "breaking", "priority": 1, "active": true },
+    { "id": "layout_14_snow_watch", "type": "snow", "style": "alert", "priority": 1, "active": true },
+    { "id": "layout_15_heatwave", "type": "heat", "style": "alert", "priority": 1, "active": true }
+  ]
+}

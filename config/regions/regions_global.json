@@ -1,0 +1,122 @@
+{
+  "regions": [
+
+    {
+      "id": "pl_wielkopolskie",
+      "name": "Wielkopolskie",
+      "country": "PL",
+      "language": "pl",
+      "type": "voivodeship",
+      "timezone": "Europe/Warsaw",
+      "lat": 52.4064,
+      "lon": 16.9252,
+      "active": true,
+      "priority": 1
+    },
+
+    {
+      "id": "pl_mazowieckie",
+      "name": "Mazowieckie",
+      "country": "PL",
+      "language": "pl",
+      "type": "voivodeship",
+      "timezone": "Europe/Warsaw",
+      "lat": 52.2297,
+      "lon": 21.0122,
+      "active": true,
+      "priority": 1
+    },
+
+    {
+      "id": "de_bavaria",
+      "name": "Bavaria",
+      "country": "DE",
+      "language": "de",
+      "type": "region",
+      "timezone": "Europe/Berlin",
+      "lat": 48.7904,
+      "lon": 11.4979,
+      "active": true,
+      "priority": 1
+    },
+
+    {
+      "id": "de_nrw",
+      "name": "North Rhine-Westphalia",
+      "country": "DE",
+      "language": "de",
+      "type": "region",
+      "timezone": "Europe/Berlin",
+      "lat": 51.4332,
+      "lon": 7.6616,
+      "active": true,
+      "priority": 1
+    },
+
+    {
+      "id": "uk_england",
+      "name": "England",
+      "country": "UK",
+      "language": "en",
+      "type": "region",
+      "timezone": "Europe/London",
+      "lat": 52.3555,
+      "lon": -1.1743,
+      "active": true,
+      "priority": 1
+    },
+
+    {
+      "id": "uk_scotland",
+      "name": "Scotland",
+      "country": "UK",
+      "language": "en",
+      "type": "region",
+      "timezone": "Europe/London",
+      "lat": 56.4907,
+      "lon": -4.2026,
+      "active": true,
+      "priority": 1
+    },
+
+    {
+      "id": "ca_ontario",
+      "name": "Ontario",
+      "country": "CA",
+      "language": "en",
+      "type": "region",
+      "timezone": "America/Toronto",
+      "lat": 50.0000,
+      "lon": -85.0000,
+      "active": true,
+      "priority": 1
+    },
+
+    {
+      "id": "au_new_south_wales",
+      "name": "New South Wales",
+      "country": "AU",
+      "language": "en",
+      "type": "region",
+      "timezone": "Australia/Sydney",
+      "lat": -31.2532,
+      "lon": 146.9211,
+      "active": true,
+      "priority": 1
+    },
+
+    {
+      "id": "nz_north_island",
+      "name": "North Island",
+      "country": "NZ",
+      "language": "en",
+      "type": "region",
+      "timezone": "Pacific/Auckland",
+      "lat": -38.4161,
+      "lon": 175.7830,
+      "active": true,
+      "priority": 1
+    }
+
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "voice_1": {
+    "name": "Rachel",
+    "language": "en",
+    "elevenlabs_id": "h4BzQY1NEHGhFFLDU8WQ"
+  },
+  "voice_2": {
+    "name": "Antoni",
+    "language": "pl",
+    "elevenlabs_id": "o2xdfKUpc1Bwq7RchZuW"
+  }
+}
