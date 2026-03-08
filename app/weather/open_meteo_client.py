@@ -5,7 +5,6 @@ class OpenMeteoClient:
     BASE_URL = "https://api.open-meteo.com/v1/forecast"
 
     def get_current_weather(self, region: str = "Warszawa") -> Dict[str, Any]:
-        # Mapowanie regionów → koordynaty (można rozszerzyć o więcej miast/województw)
         region_coords = {
             "Warszawa": (52.2297, 21.0122),
             "Kraków": (50.0497, 19.9445),
@@ -14,7 +13,7 @@ class OpenMeteoClient:
         }
 
         if region not in region_coords:
-            return {"error": f"Nieznany region: {region}"}
+            return {"error": f"Unknown region: {region}"}
 
         lat, lon = region_coords[region]
 
@@ -52,7 +51,6 @@ class OpenMeteoClient:
             return {"error": str(e)}
 
     def analyze_weather(self, data: Dict[str, Any]) -> str:
-        """Prosta analiza pogody - zwraca typ rolki: standard / alert / extreme"""
         if 'error' in data:
             return "error"
 
@@ -61,24 +59,47 @@ class OpenMeteoClient:
         wind = data.get("wind_speed", 0.0)
         code = data.get("weather_code", 0)
 
-        # Alert: deszcz/śnieg/grad/burza
         if precip > 3.0 or code >= 51 or code in [80, 81, 82, 95, 96, 99]:
             return "alert"
-
-        # Extreme: bardzo zimno/ciepło, silny wiatr
         if temp < -10 or temp > 30 or wind > 40:
             return "extreme"
-
-        # Standard: reszta przypadków (sucho, normalne warunki)
         return "standard"
 
+    def generate_script(self, data: Dict[str, Any]) -> str:
+        if 'error' in data or self.analyze_weather(data) == "error":
+            return "Error fetching weather data."
 
-# Do testów – uruchom plik bezpośrednio
+        temp = data["temperature"]
+        feels = data["feels_like"]
+        precip = data["precipitation"]
+        cloud = data["cloud_cover"]
+        wind = data["wind_speed"]
+        region = data["region"]
+
+        hook = "Poland today: Spring is here, but still feels fresh!" if temp < 15 else "Warm vibes across Poland today!"
+
+        overview = f"{region}: {temp}°C (feels like {feels}°C), wind {wind} km/h."
+        if cloud > 70:
+            overview += " Mostly cloudy skies."
+        elif cloud < 30:
+            overview += " Sunny and clear."
+        else:
+            overview += " Partly cloudy."
+
+        if precip > 0:
+            overview += f" Light precipitation ({precip} mm)."
+        else:
+            overview += " Dry day ahead."
+
+        outro = "Stay tuned for updates – follow for daily forecasts!"
+
+        return f"[Hook] {hook}\n[Overview] {overview}\n[Outro] {outro}"
+
+
+# Do testów
 if __name__ == "__main__":
     client = OpenMeteoClient()
     for city in ["Warszawa", "Kraków", "Gdańsk", "Wrocław"]:
         weather = client.get_current_weather(city)
-        analysis = client.analyze_weather(weather)
-        print(f"\n{city}:")
-        print(weather)
-        print(f"Typ rolki: {analysis}")
+        script = client.generate_script(weather)
+        print(f"\n=== {city} ===\n{weather}\nTyp rolki: {client.analyze_weather(weather)}\nSkrypt rolki:\n{script}")
