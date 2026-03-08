@@ -51,10 +51,34 @@ class OpenMeteoClient:
         except Exception as e:
             return {"error": str(e)}
 
+    def analyze_weather(self, data: Dict[str, Any]) -> str:
+        """Prosta analiza pogody - zwraca typ rolki: standard / alert / extreme"""
+        if 'error' in data:
+            return "error"
+
+        precip = data.get("precipitation", 0.0)
+        temp = data.get("temperature", 0.0)
+        wind = data.get("wind_speed", 0.0)
+        code = data.get("weather_code", 0)
+
+        # Alert: deszcz/śnieg/grad/burza
+        if precip > 3.0 or code >= 51 or code in [80, 81, 82, 95, 96, 99]:
+            return "alert"
+
+        # Extreme: bardzo zimno/ciepło, silny wiatr
+        if temp < -10 or temp > 30 or wind > 40:
+            return "extreme"
+
+        # Standard: reszta przypadków (sucho, normalne warunki)
+        return "standard"
+
 
 # Do testów – uruchom plik bezpośrednio
 if __name__ == "__main__":
     client = OpenMeteoClient()
     for city in ["Warszawa", "Kraków", "Gdańsk", "Wrocław"]:
+        weather = client.get_current_weather(city)
+        analysis = client.analyze_weather(weather)
         print(f"\n{city}:")
-        print(client.get_current_weather(city))
+        print(weather)
+        print(f"Typ rolki: {analysis}")
