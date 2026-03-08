@@ -5,7 +5,7 @@ class OpenMeteoClient:
     BASE_URL = "https://api.open-meteo.com/v1/forecast"
 
     def get_current_weather(self, region: str = "Warszawa") -> Dict[str, Any]:
-        # Mapowanie regionów → koordynaty (można rozszerzyć)
+        # Mapowanie regionów → koordynaty (można rozszerzyć o więcej miast/województw)
         region_coords = {
             "Warszawa": (52.2297, 21.0122),
             "Kraków": (50.0497, 19.9445),
@@ -55,5 +55,6 @@ class OpenMeteoClient:
 # Do testów – uruchom plik bezpośrednio
 if __name__ == "__main__":
     client = OpenMeteoClient()
-    print(client.get_current_weather("Warszawa"))
-    print(client.get_current_weather("Kraków"))
+    for city in ["Warszawa", "Kraków", "Gdańsk", "Wrocław"]:
+        print(f"\n{city}:")
+        print(client.get_current_weather(city))
